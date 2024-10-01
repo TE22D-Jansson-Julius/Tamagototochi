@@ -1,51 +1,70 @@
 
 public class Tomomomomomogatchi
 {
-private int hunger;
-private int boredom;
-private List<string> words;
-private bool isAlive;
-private Random generator;
-public string name;
+    private int hunger;
+    private int boredom;
+    private List<string> words;
+    private bool isAlive = true;
+    private Random generator;
+    public string name;
 
 
-public void Feed(){
-
-}
-
-public void Hi(){
-
-}
-
-public void Teach(){
-
-}
-
-public void Tick(){
-hunger += 1;
-boredom +=1;
-
-   if (hunger > 10  || boredom > 10){
-isAlive = false;
+    public void Feed()
+    {
+        hunger -= 1;
+        Console.WriteLine("NOM NOM NOM");
     }
-    else isAlive = true;
-}
 
-public void  PrintStats(){
- Console.WriteLine("Stats");
- Console.WriteLine(name);
- Console.WriteLine(hunger);
- Console.WriteLine(boredom);
-Console.WriteLine(isAlive);
-}
+    public void Hi()
+    {
+        if (words.Count > 0){
+        Console.WriteLine(words[Random.Shared.Next(words.Count)]);
+        ReduceBoredom();
+        }
 
-public bool GetAlive(){
+        if (words.Count < 0){
+            Console.WriteLine("Du kan inte. Måste använda Teach först");
+        }
+    }
 
-    return isAlive;
-}
+    public void Teach()
+    {
+        Console.WriteLine("What word do you want to teach?");
+        string learnword= Console.ReadLine();
+        
+        words.Add(learnword);
 
-private void ReduceBoredom() {
+    }
 
-}
+    public void Tick()
+    {
+        hunger += 1;
+        boredom += 1;
+
+        if (hunger > 10 || boredom > 10)
+        {
+            isAlive = false;
+        }
+        else isAlive = true;
+    }
+
+    public void PrintStats()
+    {
+        Console.WriteLine("Stats:");
+        Console.WriteLine($"Name: {name}");
+        Console.WriteLine($"Hunger: {hunger}");
+        Console.WriteLine($"Boredom: {boredom}");
+     
+    }
+
+    public bool GetAlive()
+    {
+        return isAlive;
+    }
+
+    private void ReduceBoredom()
+    {
+        boredom -= 1;
+    }
 
 }
