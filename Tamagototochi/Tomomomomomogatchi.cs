@@ -17,8 +17,35 @@ public void Hi(){
 
 }
 
-public void
-public void
-public void
+public void Teach(){
+
+}
+
+public void Tick(){
+hunger += 1;
+boredom +=1;
+
+   if (hunger > 10  || boredom > 10){
+isAlive = false;
+    }
+    else isAlive = true;
+}
+
+public void  PrintStats(){
+ Console.WriteLine("Stats");
+ Console.WriteLine(name);
+ Console.WriteLine(hunger);
+ Console.WriteLine(boredom);
+Console.WriteLine(isAlive);
+}
+
+public bool GetAlive(){
+
+    return isAlive;
+}
+
+private void ReduceBoredom() {
+
+}
 
 }
