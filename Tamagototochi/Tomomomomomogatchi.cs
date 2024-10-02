@@ -17,12 +17,14 @@ public class Tomomomomomogatchi
 
     public void Hi()
     {
-        if (words.Count > 0){
-        Console.WriteLine(words[Random.Shared.Next(words.Count)]);
-        ReduceBoredom();
+        if (words.Count > 0)
+        {
+            Console.WriteLine(words[Random.Shared.Next(words.Count)]);
+            ReduceBoredom();
         }
 
-        if (words.Count < 0){
+        if (words.Count < 0)
+        {
             Console.WriteLine("Du kan inte. Måste använda Teach först");
         }
     }
@@ -30,8 +32,8 @@ public class Tomomomomomogatchi
     public void Teach()
     {
         Console.WriteLine("What word do you want to teach?");
-        string learnword= Console.ReadLine();
-        
+        string learnword = Console.ReadLine();
+
         words.Add(learnword);
 
     }
@@ -54,7 +56,7 @@ public class Tomomomomomogatchi
         Console.WriteLine($"Name: {name}");
         Console.WriteLine($"Hunger: {hunger}");
         Console.WriteLine($"Boredom: {boredom}");
-     
+
     }
 
     public bool GetAlive()
