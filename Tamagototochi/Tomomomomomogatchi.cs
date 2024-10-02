@@ -3,7 +3,7 @@ public class Tomomomomomogatchi
 {
     private int hunger;
     private int boredom;
-    private List<string> words;
+    private List<string> words = new();
     private bool isAlive = true;
     private Random generator;
     public string name;
